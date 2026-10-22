@@ -1,0 +1,79 @@
+{
+  "provider_id": {
+    "description": "做人物卡用的模型",
+    "type": "string",
+    "_special": "select_provider",
+    "hint": "每週給常聊的人整理人物卡時用。留空用 AstrBot 預設模型",
+    "default": ""
+  },
+  "groups": {
+    "description": "記錄好感的群",
+    "type": "list",
+    "hint": "留空就用門禁插件裡填的群",
+    "default": []
+  },
+  "owner_qq": {
+    "description": "主人 QQ",
+    "type": "list",
+    "hint": "主人好感和熟悉度固定是滿的，也只有主人能用 /好感 指令。留空用門禁插件裡填的",
+    "default": []
+  },
+  "card_auto": {
+    "description": "群友要印象卡時自動發",
+    "type": "bool",
+    "hint": "有人叫機器人、而且是在問它對自己的印象時，直接發一張印象卡圖片（語義判斷，不用關鍵詞）",
+    "default": true
+  },
+  "embedding_provider_id": {
+    "description": "判斷用的向量模型",
+    "type": "string",
+    "hint": "填向量模型的 ID，留空用第一個向量模型（比如 LivingMemory 用的那個）",
+    "default": ""
+  },
+  "card_examples": {
+    "description": "算在要印象卡的例句",
+    "type": "list",
+    "hint": "起步例句，意思像這些就算；機器人還會自己學新說法",
+    "default": [
+      "你对我的印象怎么样",
+      "给我看看我的印象卡",
+      "我在你心里是什么样的人",
+      "你觉得我这个人怎么样",
+      "发一下我的卡片",
+      "说说你对我的看法"
+    ]
+  },
+  "card_not_examples": {
+    "description": "不算要印象卡的例句",
+    "type": "list",
+    "hint": "話題像但不是要卡的（問別人、誇機器人、別的卡），用來排除",
+    "default": [
+      "你对他的印象怎么样",
+      "你觉得她这个人怎么样",
+      "我对你的印象很好",
+      "我的卡丢了",
+      "你觉得这个东西怎么样",
+      "我觉得你很可爱",
+      "在我的印象里是这样的",
+      "帮我评价一下这个"
+    ]
+  },
+  "card_min_sim": {
+    "description": "至少要多像",
+    "type": "float",
+    "hint": "和要卡例句的相似度門檻（0～1），調高更嚴",
+    "default": 0.7
+  },
+  "card_margin": {
+    "description": "比反例高多少才算",
+    "type": "float",
+    "hint": "和要卡例句的相似度要比和反例的高出這麼多",
+    "default": 0.05
+  },
+  "card_learn": {
+    "description": "自己學新說法",
+    "type": "bool",
+    "hint": "模型自己判斷出有人在要卡、而例句沒認出來時，把那句話記成新例句",
+    "default": true
+  }
+}

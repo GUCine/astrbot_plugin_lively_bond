@@ -1,0 +1,9 @@
+name: astrbot_plugin_lively_bond
+display_name: 好感度與印象卡
+desc: 好感度系統：熟悉度、好感、心情、印象、每週人物卡，群友要「印象卡」時發一張印象卡圖片
+version: 2.0.0
+author: GUCine
+repo: https://github.com/GUCine/astrbot_plugin_lively_bond
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.29.0"
